@@ -5,322 +5,357 @@ module Data.OneOfN where
 import Data.Data (Data, Typeable)
 
 data OneOf2 t1 t2
-    = OneOf2 !t1 | TwoOf2 !t2
+    = OneOf2 !t1
+    | TwoOf2 !t2
     deriving (Eq, Ord, Read, Show, Data, Typeable)
+
 oneOf2 f1 f2 it
   = case it of
       OneOf2 x -> f1 x
       TwoOf2 x -> f2 x
+
 data OneOf3 t1 t2 t3
-    = OneOf3 !t1 | TwoOf3 !t2 | ThreeOf3 !t3
+    = OneOf3   !t1
+    | TwoOf3   !t2
+    | ThreeOf3 !t3
     deriving (Eq, Ord, Read, Show, Data, Typeable)
+
 oneOf3 f1 f2 f3 it
   = case it of
-      OneOf3 x -> f1 x
-      TwoOf3 x -> f2 x
+      OneOf3   x -> f1 x
+      TwoOf3   x -> f2 x
       ThreeOf3 x -> f3 x
+
 data OneOf4 t1 t2 t3 t4
-    = OneOf4 !t1 | TwoOf4 !t2 | ThreeOf4 !t3 | FourOf4 !t4
+    = OneOf4   !t1
+    | TwoOf4   !t2
+    | ThreeOf4 !t3
+    | FourOf4  !t4
     deriving (Eq, Ord, Read, Show, Data, Typeable)
+
 oneOf4 f1 f2 f3 f4 it
   = case it of
-      OneOf4 x -> f1 x
-      TwoOf4 x -> f2 x
+      OneOf4   x -> f1 x
+      TwoOf4   x -> f2 x
       ThreeOf4 x -> f3 x
-      FourOf4 x -> f4 x
+      FourOf4  x -> f4 x
+
 data OneOf5 t1 t2 t3 t4 t5
-    = OneOf5 !t1 |
-      TwoOf5 !t2 |
-      ThreeOf5 !t3 |
-      FourOf5 !t4 |
-      FiveOf5 !t5
+    = OneOf5   !t1
+    | TwoOf5   !t2
+    | ThreeOf5 !t3
+    | FourOf5  !t4
+    | FiveOf5  !t5
     deriving (Eq, Ord, Read, Show, Data, Typeable)
+
 oneOf5 f1 f2 f3 f4 f5 it
   = case it of
-      OneOf5 x -> f1 x
-      TwoOf5 x -> f2 x
+      OneOf5   x -> f1 x
+      TwoOf5   x -> f2 x
       ThreeOf5 x -> f3 x
-      FourOf5 x -> f4 x
-      FiveOf5 x -> f5 x
+      FourOf5  x -> f4 x
+      FiveOf5  x -> f5 x
+
 data OneOf6 t1 t2 t3 t4 t5 t6
-    = OneOf6 !t1 |
-      TwoOf6 !t2 |
-      ThreeOf6 !t3 |
-      FourOf6 !t4 |
-      FiveOf6 !t5 |
-      SixOf6 !t6
+    = OneOf6   !t1
+    | TwoOf6   !t2
+    | ThreeOf6 !t3
+    | FourOf6  !t4
+    | FiveOf6  !t5
+    | SixOf6   !t6
     deriving (Eq, Ord, Read, Show, Data, Typeable)
+
 oneOf6 f1 f2 f3 f4 f5 f6 it
   = case it of
-      OneOf6 x -> f1 x
-      TwoOf6 x -> f2 x
+      OneOf6   x -> f1 x
+      TwoOf6   x -> f2 x
       ThreeOf6 x -> f3 x
-      FourOf6 x -> f4 x
-      FiveOf6 x -> f5 x
-      SixOf6 x -> f6 x
+      FourOf6  x -> f4 x
+      FiveOf6  x -> f5 x
+      SixOf6   x -> f6 x
+
 data OneOf7 t1 t2 t3 t4 t5 t6 t7
-    = OneOf7 !t1 |
-      TwoOf7 !t2 |
-      ThreeOf7 !t3 |
-      FourOf7 !t4 |
-      FiveOf7 !t5 |
-      SixOf7 !t6 |
-      SevenOf7 !t7
+    = OneOf7   !t1
+    | TwoOf7   !t2
+    | ThreeOf7 !t3
+    | FourOf7  !t4
+    | FiveOf7  !t5
+    | SixOf7   !t6
+    | SevenOf7 !t7
     deriving (Eq, Ord, Read, Show, Data, Typeable)
+
 oneOf7 f1 f2 f3 f4 f5 f6 f7 it
   = case it of
-      OneOf7 x -> f1 x
-      TwoOf7 x -> f2 x
+      OneOf7   x -> f1 x
+      TwoOf7   x -> f2 x
       ThreeOf7 x -> f3 x
-      FourOf7 x -> f4 x
-      FiveOf7 x -> f5 x
-      SixOf7 x -> f6 x
+      FourOf7  x -> f4 x
+      FiveOf7  x -> f5 x
+      SixOf7   x -> f6 x
       SevenOf7 x -> f7 x
+
 data OneOf8 t1 t2 t3 t4 t5 t6 t7 t8
-    = OneOf8 !t1 |
-      TwoOf8 !t2 |
-      ThreeOf8 !t3 |
-      FourOf8 !t4 |
-      FiveOf8 !t5 |
-      SixOf8 !t6 |
-      SevenOf8 !t7 |
-      EightOf8 !t8
+    = OneOf8   !t1
+    | TwoOf8   !t2
+    | ThreeOf8 !t3
+    | FourOf8  !t4
+    | FiveOf8  !t5
+    | SixOf8   !t6
+    | SevenOf8 !t7
+    | EightOf8 !t8
     deriving (Eq, Ord, Read, Show)
+
 oneOf8 f1 f2 f3 f4 f5 f6 f7 f8 it
   = case it of
-      OneOf8 x -> f1 x
-      TwoOf8 x -> f2 x
+      OneOf8   x -> f1 x
+      TwoOf8   x -> f2 x
       ThreeOf8 x -> f3 x
-      FourOf8 x -> f4 x
-      FiveOf8 x -> f5 x
-      SixOf8 x -> f6 x
+      FourOf8  x -> f4 x
+      FiveOf8  x -> f5 x
+      SixOf8   x -> f6 x
       SevenOf8 x -> f7 x
       EightOf8 x -> f8 x
+
 data OneOf9 t1 t2 t3 t4 t5 t6 t7 t8 t9
-    = OneOf9 !t1 |
-      TwoOf9 !t2 |
-      ThreeOf9 !t3 |
-      FourOf9 !t4 |
-      FiveOf9 !t5 |
-      SixOf9 !t6 |
-      SevenOf9 !t7 |
-      EightOf9 !t8 |
-      NineOf9 !t9
+    = OneOf9   !t1
+    | TwoOf9   !t2
+    | ThreeOf9 !t3
+    | FourOf9  !t4
+    | FiveOf9  !t5
+    | SixOf9   !t6
+    | SevenOf9 !t7
+    | EightOf9 !t8
+    | NineOf9  !t9
     deriving (Eq, Ord, Read, Show)
+
 oneOf9 f1 f2 f3 f4 f5 f6 f7 f8 f9 it
   = case it of
-      OneOf9 x -> f1 x
-      TwoOf9 x -> f2 x
+      OneOf9   x -> f1 x
+      TwoOf9   x -> f2 x
       ThreeOf9 x -> f3 x
-      FourOf9 x -> f4 x
-      FiveOf9 x -> f5 x
-      SixOf9 x -> f6 x
+      FourOf9  x -> f4 x
+      FiveOf9  x -> f5 x
+      SixOf9   x -> f6 x
       SevenOf9 x -> f7 x
       EightOf9 x -> f8 x
-      NineOf9 x -> f9 x
+      NineOf9  x -> f9 x
+
 data OneOf10 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10
-    = OneOf10 !t1 |
-      TwoOf10 !t2 |
-      ThreeOf10 !t3 |
-      FourOf10 !t4 |
-      FiveOf10 !t5 |
-      SixOf10 !t6 |
-      SevenOf10 !t7 |
-      EightOf10 !t8 |
-      NineOf10 !t9 |
-      Choice10Of10 !t10
+    = OneOf10      !t1
+    | TwoOf10      !t2
+    | ThreeOf10    !t3
+    | FourOf10     !t4
+    | FiveOf10     !t5
+    | SixOf10      !t6
+    | SevenOf10    !t7
+    | EightOf10    !t8
+    | NineOf10     !t9
+    | Choice10Of10 !t10
     deriving (Eq, Ord, Read, Show)
+
 oneOf10 f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 it
   = case it of
-      OneOf10 x -> f1 x
-      TwoOf10 x -> f2 x
-      ThreeOf10 x -> f3 x
-      FourOf10 x -> f4 x
-      FiveOf10 x -> f5 x
-      SixOf10 x -> f6 x
-      SevenOf10 x -> f7 x
-      EightOf10 x -> f8 x
-      NineOf10 x -> f9 x
+      OneOf10      x -> f1 x
+      TwoOf10      x -> f2 x
+      ThreeOf10    x -> f3 x
+      FourOf10     x -> f4 x
+      FiveOf10     x -> f5 x
+      SixOf10      x -> f6 x
+      SevenOf10    x -> f7 x
+      EightOf10    x -> f8 x
+      NineOf10     x -> f9 x
       Choice10Of10 x -> f10 x
+
 data OneOf11 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11
-    = OneOf11 !t1 |
-      TwoOf11 !t2 |
-      ThreeOf11 !t3 |
-      FourOf11 !t4 |
-      FiveOf11 !t5 |
-      SixOf11 !t6 |
-      SevenOf11 !t7 |
-      EightOf11 !t8 |
-      NineOf11 !t9 |
-      Choice10Of11 !t10 |
-      Choice11Of11 !t11
+    = OneOf11      !t1
+    | TwoOf11      !t2
+    | ThreeOf11    !t3
+    | FourOf11     !t4
+    | FiveOf11     !t5
+    | SixOf11      !t6
+    | SevenOf11    !t7
+    | EightOf11    !t8
+    | NineOf11     !t9
+    | Choice10Of11 !t10
+    | Choice11Of11 !t11
     deriving (Eq, Ord, Read, Show)
+
 oneOf11 f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 it
   = case it of
-      OneOf11 x -> f1 x
-      TwoOf11 x -> f2 x
-      ThreeOf11 x -> f3 x
-      FourOf11 x -> f4 x
-      FiveOf11 x -> f5 x
-      SixOf11 x -> f6 x
-      SevenOf11 x -> f7 x
-      EightOf11 x -> f8 x
-      NineOf11 x -> f9 x
+      OneOf11      x -> f1 x
+      TwoOf11      x -> f2 x
+      ThreeOf11    x -> f3 x
+      FourOf11     x -> f4 x
+      FiveOf11     x -> f5 x
+      SixOf11      x -> f6 x
+      SevenOf11    x -> f7 x
+      EightOf11    x -> f8 x
+      NineOf11     x -> f9 x
       Choice10Of11 x -> f10 x
       Choice11Of11 x -> f11 x
+
 data OneOf12 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12
-    = OneOf12 !t1 |
-      TwoOf12 !t2 |
-      ThreeOf12 !t3 |
-      FourOf12 !t4 |
-      FiveOf12 !t5 |
-      SixOf12 !t6 |
-      SevenOf12 !t7 |
-      EightOf12 !t8 |
-      NineOf12 !t9 |
-      Choice10Of12 !t10 |
-      Choice11Of12 !t11 |
-      Choice12Of12 !t12
+    = OneOf12      !t1
+    | TwoOf12      !t2
+    | ThreeOf12    !t3
+    | FourOf12     !t4
+    | FiveOf12     !t5
+    | SixOf12      !t6
+    | SevenOf12    !t7
+    | EightOf12    !t8
+    | NineOf12     !t9
+    | Choice10Of12 !t10
+    | Choice11Of12 !t11
+    | Choice12Of12 !t12
     deriving (Eq, Ord, Read, Show)
+
 oneOf12 f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 it
   = case it of
-      OneOf12 x -> f1 x
-      TwoOf12 x -> f2 x
-      ThreeOf12 x -> f3 x
-      FourOf12 x -> f4 x
-      FiveOf12 x -> f5 x
-      SixOf12 x -> f6 x
-      SevenOf12 x -> f7 x
-      EightOf12 x -> f8 x
-      NineOf12 x -> f9 x
+      OneOf12      x -> f1 x
+      TwoOf12      x -> f2 x
+      ThreeOf12    x -> f3 x
+      FourOf12     x -> f4 x
+      FiveOf12     x -> f5 x
+      SixOf12      x -> f6 x
+      SevenOf12    x -> f7 x
+      EightOf12    x -> f8 x
+      NineOf12     x -> f9 x
       Choice10Of12 x -> f10 x
       Choice11Of12 x -> f11 x
       Choice12Of12 x -> f12 x
+
 data OneOf13 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13
-    = OneOf13 !t1 |
-      TwoOf13 !t2 |
-      ThreeOf13 !t3 |
-      FourOf13 !t4 |
-      FiveOf13 !t5 |
-      SixOf13 !t6 |
-      SevenOf13 !t7 |
-      EightOf13 !t8 |
-      NineOf13 !t9 |
-      Choice10Of13 !t10 |
-      Choice11Of13 !t11 |
-      Choice12Of13 !t12 |
-      Choice13Of13 !t13
+    = OneOf13      !t1
+    | TwoOf13      !t2
+    | ThreeOf13    !t3
+    | FourOf13     !t4
+    | FiveOf13     !t5
+    | SixOf13      !t6
+    | SevenOf13    !t7
+    | EightOf13    !t8
+    | NineOf13     !t9
+    | Choice10Of13 !t10
+    | Choice11Of13 !t11
+    | Choice12Of13 !t12
+    | Choice13Of13 !t13
     deriving (Eq, Ord, Read, Show)
+
 oneOf13 f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 f13 it
   = case it of
-      OneOf13 x -> f1 x
-      TwoOf13 x -> f2 x
-      ThreeOf13 x -> f3 x
-      FourOf13 x -> f4 x
-      FiveOf13 x -> f5 x
-      SixOf13 x -> f6 x
-      SevenOf13 x -> f7 x
-      EightOf13 x -> f8 x
-      NineOf13 x -> f9 x
+      OneOf13      x -> f1 x
+      TwoOf13      x -> f2 x
+      ThreeOf13    x -> f3 x
+      FourOf13     x -> f4 x
+      FiveOf13     x -> f5 x
+      SixOf13      x -> f6 x
+      SevenOf13    x -> f7 x
+      EightOf13    x -> f8 x
+      NineOf13     x -> f9 x
       Choice10Of13 x -> f10 x
       Choice11Of13 x -> f11 x
       Choice12Of13 x -> f12 x
       Choice13Of13 x -> f13 x
+
 data OneOf14 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14
-    = OneOf14 !t1 |
-      TwoOf14 !t2 |
-      ThreeOf14 !t3 |
-      FourOf14 !t4 |
-      FiveOf14 !t5 |
-      SixOf14 !t6 |
-      SevenOf14 !t7 |
-      EightOf14 !t8 |
-      NineOf14 !t9 |
-      Choice10Of14 !t10 |
-      Choice11Of14 !t11 |
-      Choice12Of14 !t12 |
-      Choice13Of14 !t13 |
-      Choice14Of14 !t14
+    = OneOf14      !t1
+    | TwoOf14      !t2
+    | ThreeOf14    !t3
+    | FourOf14     !t4
+    | FiveOf14     !t5
+    | SixOf14      !t6
+    | SevenOf14    !t7
+    | EightOf14    !t8
+    | NineOf14     !t9
+    | Choice10Of14 !t10
+    | Choice11Of14 !t11
+    | Choice12Of14 !t12
+    | Choice13Of14 !t13
+    | Choice14Of14 !t14
     deriving (Eq, Ord, Read, Show)
+
 oneOf14 f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 f13 f14 it
   = case it of
-      OneOf14 x -> f1 x
-      TwoOf14 x -> f2 x
-      ThreeOf14 x -> f3 x
-      FourOf14 x -> f4 x
-      FiveOf14 x -> f5 x
-      SixOf14 x -> f6 x
-      SevenOf14 x -> f7 x
-      EightOf14 x -> f8 x
-      NineOf14 x -> f9 x
+      OneOf14      x -> f1 x
+      TwoOf14      x -> f2 x
+      ThreeOf14    x -> f3 x
+      FourOf14     x -> f4 x
+      FiveOf14     x -> f5 x
+      SixOf14      x -> f6 x
+      SevenOf14    x -> f7 x
+      EightOf14    x -> f8 x
+      NineOf14     x -> f9 x
       Choice10Of14 x -> f10 x
       Choice11Of14 x -> f11 x
       Choice12Of14 x -> f12 x
       Choice13Of14 x -> f13 x
       Choice14Of14 x -> f14 x
+
 data OneOf15 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15
-    = OneOf15 !t1 |
-      TwoOf15 !t2 |
-      ThreeOf15 !t3 |
-      FourOf15 !t4 |
-      FiveOf15 !t5 |
-      SixOf15 !t6 |
-      SevenOf15 !t7 |
-      EightOf15 !t8 |
-      NineOf15 !t9 |
-      Choice10Of15 !t10 |
-      Choice11Of15 !t11 |
-      Choice12Of15 !t12 |
-      Choice13Of15 !t13 |
-      Choice14Of15 !t14 |
-      Choice15Of15 !t15
+    = OneOf15      !t1
+    | TwoOf15      !t2
+    | ThreeOf15    !t3
+    | FourOf15     !t4
+    | FiveOf15     !t5
+    | SixOf15      !t6
+    | SevenOf15    !t7
+    | EightOf15    !t8
+    | NineOf15     !t9
+    | Choice10Of15 !t10
+    | Choice11Of15 !t11
+    | Choice12Of15 !t12
+    | Choice13Of15 !t13
+    | Choice14Of15 !t14
+    | Choice15Of15 !t15
     deriving (Eq, Ord, Read, Show)
+
 oneOf15 f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 f13 f14 f15 it
   = case it of
-      OneOf15 x -> f1 x
-      TwoOf15 x -> f2 x
-      ThreeOf15 x -> f3 x
-      FourOf15 x -> f4 x
-      FiveOf15 x -> f5 x
-      SixOf15 x -> f6 x
-      SevenOf15 x -> f7 x
-      EightOf15 x -> f8 x
-      NineOf15 x -> f9 x
+      OneOf15      x -> f1 x
+      TwoOf15      x -> f2 x
+      ThreeOf15    x -> f3 x
+      FourOf15     x -> f4 x
+      FiveOf15     x -> f5 x
+      SixOf15      x -> f6 x
+      SevenOf15    x -> f7 x
+      EightOf15    x -> f8 x
+      NineOf15     x -> f9 x
       Choice10Of15 x -> f10 x
       Choice11Of15 x -> f11 x
       Choice12Of15 x -> f12 x
       Choice13Of15 x -> f13 x
       Choice14Of15 x -> f14 x
       Choice15Of15 x -> f15 x
+
 data OneOf16 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16
-    = OneOf16 !t1 |
-      TwoOf16 !t2 |
-      ThreeOf16 !t3 |
-      FourOf16 !t4 |
-      FiveOf16 !t5 |
-      SixOf16 !t6 |
-      SevenOf16 !t7 |
-      EightOf16 !t8 |
-      NineOf16 !t9 |
-      Choice10Of16 !t10 |
-      Choice11Of16 !t11 |
-      Choice12Of16 !t12 |
-      Choice13Of16 !t13 |
-      Choice14Of16 !t14 |
-      Choice15Of16 !t15 |
-      Choice16Of16 !t16
+    = OneOf16      !t1
+    | TwoOf16      !t2
+    | ThreeOf16    !t3
+    | FourOf16     !t4
+    | FiveOf16     !t5
+    | SixOf16      !t6
+    | SevenOf16    !t7
+    | EightOf16    !t8
+    | NineOf16     !t9
+    | Choice10Of16 !t10
+    | Choice11Of16 !t11
+    | Choice12Of16 !t12
+    | Choice13Of16 !t13
+    | Choice14Of16 !t14
+    | Choice15Of16 !t15
+    | Choice16Of16 !t16
     deriving (Eq, Ord, Read, Show)
+
 oneOf16 f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 f13 f14 f15 f16 it
   = case it of
-      OneOf16 x -> f1 x
-      TwoOf16 x -> f2 x
-      ThreeOf16 x -> f3 x
-      FourOf16 x -> f4 x
-      FiveOf16 x -> f5 x
-      SixOf16 x -> f6 x
-      SevenOf16 x -> f7 x
-      EightOf16 x -> f8 x
-      NineOf16 x -> f9 x
+      OneOf16      x -> f1 x
+      TwoOf16      x -> f2 x
+      ThreeOf16    x -> f3 x
+      FourOf16     x -> f4 x
+      FiveOf16     x -> f5 x
+      SixOf16      x -> f6 x
+      SevenOf16    x -> f7 x
+      EightOf16    x -> f8 x
+      NineOf16     x -> f9 x
       Choice10Of16 x -> f10 x
       Choice11Of16 x -> f11 x
       Choice12Of16 x -> f12 x
@@ -328,70 +363,38 @@ oneOf16 f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 f13 f14 f15 f16 it
       Choice14Of16 x -> f14 x
       Choice15Of16 x -> f15 x
       Choice16Of16 x -> f16 x
-data OneOf17 t1
-             t2
-             t3
-             t4
-             t5
-             t6
-             t7
-             t8
-             t9
-             t10
-             t11
-             t12
-             t13
-             t14
-             t15
-             t16
-             t17
-    = OneOf17 !t1 |
-      TwoOf17 !t2 |
-      ThreeOf17 !t3 |
-      FourOf17 !t4 |
-      FiveOf17 !t5 |
-      SixOf17 !t6 |
-      SevenOf17 !t7 |
-      EightOf17 !t8 |
-      NineOf17 !t9 |
-      Choice10Of17 !t10 |
-      Choice11Of17 !t11 |
-      Choice12Of17 !t12 |
-      Choice13Of17 !t13 |
-      Choice14Of17 !t14 |
-      Choice15Of17 !t15 |
-      Choice16Of17 !t16 |
-      Choice17Of17 !t17
+
+data OneOf17 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17
+    = OneOf17      !t1
+    | TwoOf17      !t2
+    | ThreeOf17    !t3
+    | FourOf17     !t4
+    | FiveOf17     !t5
+    | SixOf17      !t6
+    | SevenOf17    !t7
+    | EightOf17    !t8
+    | NineOf17     !t9
+    | Choice10Of17 !t10
+    | Choice11Of17 !t11
+    | Choice12Of17 !t12
+    | Choice13Of17 !t13
+    | Choice14Of17 !t14
+    | Choice15Of17 !t15
+    | Choice16Of17 !t16
+    | Choice17Of17 !t17
     deriving (Eq, Ord, Read, Show)
-oneOf17
-  f1
-  f2
-  f3
-  f4
-  f5
-  f6
-  f7
-  f8
-  f9
-  f10
-  f11
-  f12
-  f13
-  f14
-  f15
-  f16
-  f17
-  it
+
+oneOf17 f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 f13 f14 f15 f16 f17 it
   = case it of
-      OneOf17 x -> f1 x
-      TwoOf17 x -> f2 x
-      ThreeOf17 x -> f3 x
-      FourOf17 x -> f4 x
-      FiveOf17 x -> f5 x
-      SixOf17 x -> f6 x
-      SevenOf17 x -> f7 x
-      EightOf17 x -> f8 x
-      NineOf17 x -> f9 x
+      OneOf17      x -> f1 x
+      TwoOf17      x -> f2 x
+      ThreeOf17    x -> f3 x
+      FourOf17     x -> f4 x
+      FiveOf17     x -> f5 x
+      SixOf17      x -> f6 x
+      SevenOf17    x -> f7 x
+      EightOf17    x -> f8 x
+      NineOf17     x -> f9 x
       Choice10Of17 x -> f10 x
       Choice11Of17 x -> f11 x
       Choice12Of17 x -> f12 x
@@ -400,73 +403,39 @@ oneOf17
       Choice15Of17 x -> f15 x
       Choice16Of17 x -> f16 x
       Choice17Of17 x -> f17 x
-data OneOf18 t1
-             t2
-             t3
-             t4
-             t5
-             t6
-             t7
-             t8
-             t9
-             t10
-             t11
-             t12
-             t13
-             t14
-             t15
-             t16
-             t17
-             t18
-    = OneOf18 !t1 |
-      TwoOf18 !t2 |
-      ThreeOf18 !t3 |
-      FourOf18 !t4 |
-      FiveOf18 !t5 |
-      SixOf18 !t6 |
-      SevenOf18 !t7 |
-      EightOf18 !t8 |
-      NineOf18 !t9 |
-      Choice10Of18 !t10 |
-      Choice11Of18 !t11 |
-      Choice12Of18 !t12 |
-      Choice13Of18 !t13 |
-      Choice14Of18 !t14 |
-      Choice15Of18 !t15 |
-      Choice16Of18 !t16 |
-      Choice17Of18 !t17 |
-      Choice18Of18 !t18
+
+data OneOf18 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17 t18
+    = OneOf18      !t1
+    | TwoOf18      !t2
+    | ThreeOf18    !t3
+    | FourOf18     !t4
+    | FiveOf18     !t5
+    | SixOf18      !t6
+    | SevenOf18    !t7
+    | EightOf18    !t8
+    | NineOf18     !t9
+    | Choice10Of18 !t10
+    | Choice11Of18 !t11
+    | Choice12Of18 !t12
+    | Choice13Of18 !t13
+    | Choice14Of18 !t14
+    | Choice15Of18 !t15
+    | Choice16Of18 !t16
+    | Choice17Of18 !t17
+    | Choice18Of18 !t18
     deriving (Eq, Ord, Read, Show)
-oneOf18
-  f1
-  f2
-  f3
-  f4
-  f5
-  f6
-  f7
-  f8
-  f9
-  f10
-  f11
-  f12
-  f13
-  f14
-  f15
-  f16
-  f17
-  f18
-  it
+
+oneOf18 f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 f13 f14 f15 f16 f17 f18 it
   = case it of
-      OneOf18 x -> f1 x
-      TwoOf18 x -> f2 x
-      ThreeOf18 x -> f3 x
-      FourOf18 x -> f4 x
-      FiveOf18 x -> f5 x
-      SixOf18 x -> f6 x
-      SevenOf18 x -> f7 x
-      EightOf18 x -> f8 x
-      NineOf18 x -> f9 x
+      OneOf18      x -> f1 x
+      TwoOf18      x -> f2 x
+      ThreeOf18    x -> f3 x
+      FourOf18     x -> f4 x
+      FiveOf18     x -> f5 x
+      SixOf18      x -> f6 x
+      SevenOf18    x -> f7 x
+      EightOf18    x -> f8 x
+      NineOf18     x -> f9 x
       Choice10Of18 x -> f10 x
       Choice11Of18 x -> f11 x
       Choice12Of18 x -> f12 x
@@ -476,76 +445,40 @@ oneOf18
       Choice16Of18 x -> f16 x
       Choice17Of18 x -> f17 x
       Choice18Of18 x -> f18 x
-data OneOf19 t1
-             t2
-             t3
-             t4
-             t5
-             t6
-             t7
-             t8
-             t9
-             t10
-             t11
-             t12
-             t13
-             t14
-             t15
-             t16
-             t17
-             t18
-             t19
-    = OneOf19 !t1 |
-      TwoOf19 !t2 |
-      ThreeOf19 !t3 |
-      FourOf19 !t4 |
-      FiveOf19 !t5 |
-      SixOf19 !t6 |
-      SevenOf19 !t7 |
-      EightOf19 !t8 |
-      NineOf19 !t9 |
-      Choice10Of19 !t10 |
-      Choice11Of19 !t11 |
-      Choice12Of19 !t12 |
-      Choice13Of19 !t13 |
-      Choice14Of19 !t14 |
-      Choice15Of19 !t15 |
-      Choice16Of19 !t16 |
-      Choice17Of19 !t17 |
-      Choice18Of19 !t18 |
-      Choice19Of19 !t19
+
+data OneOf19 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17 t18 t19
+    = OneOf19      !t1
+    | TwoOf19      !t2
+    | ThreeOf19    !t3
+    | FourOf19     !t4
+    | FiveOf19     !t5
+    | SixOf19      !t6
+    | SevenOf19    !t7
+    | EightOf19    !t8
+    | NineOf19     !t9
+    | Choice10Of19 !t10
+    | Choice11Of19 !t11
+    | Choice12Of19 !t12
+    | Choice13Of19 !t13
+    | Choice14Of19 !t14
+    | Choice15Of19 !t15
+    | Choice16Of19 !t16
+    | Choice17Of19 !t17
+    | Choice18Of19 !t18
+    | Choice19Of19 !t19
     deriving (Eq, Ord, Read, Show)
-oneOf19
-  f1
-  f2
-  f3
-  f4
-  f5
-  f6
-  f7
-  f8
-  f9
-  f10
-  f11
-  f12
-  f13
-  f14
-  f15
-  f16
-  f17
-  f18
-  f19
-  it
+
+oneOf19 f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 f13 f14 f15 f16 f17 f18 f19 it
   = case it of
-      OneOf19 x -> f1 x
-      TwoOf19 x -> f2 x
-      ThreeOf19 x -> f3 x
-      FourOf19 x -> f4 x
-      FiveOf19 x -> f5 x
-      SixOf19 x -> f6 x
-      SevenOf19 x -> f7 x
-      EightOf19 x -> f8 x
-      NineOf19 x -> f9 x
+      OneOf19      x -> f1 x
+      TwoOf19      x -> f2 x
+      ThreeOf19    x -> f3 x
+      FourOf19     x -> f4 x
+      FiveOf19     x -> f5 x
+      SixOf19      x -> f6 x
+      SevenOf19    x -> f7 x
+      EightOf19    x -> f8 x
+      NineOf19     x -> f9 x
       Choice10Of19 x -> f10 x
       Choice11Of19 x -> f11 x
       Choice12Of19 x -> f12 x
@@ -556,79 +489,41 @@ oneOf19
       Choice17Of19 x -> f17 x
       Choice18Of19 x -> f18 x
       Choice19Of19 x -> f19 x
-data OneOf20 t1
-             t2
-             t3
-             t4
-             t5
-             t6
-             t7
-             t8
-             t9
-             t10
-             t11
-             t12
-             t13
-             t14
-             t15
-             t16
-             t17
-             t18
-             t19
-             t20
-    = OneOf20 !t1 |
-      TwoOf20 !t2 |
-      ThreeOf20 !t3 |
-      FourOf20 !t4 |
-      FiveOf20 !t5 |
-      SixOf20 !t6 |
-      SevenOf20 !t7 |
-      EightOf20 !t8 |
-      NineOf20 !t9 |
-      Choice10Of20 !t10 |
-      Choice11Of20 !t11 |
-      Choice12Of20 !t12 |
-      Choice13Of20 !t13 |
-      Choice14Of20 !t14 |
-      Choice15Of20 !t15 |
-      Choice16Of20 !t16 |
-      Choice17Of20 !t17 |
-      Choice18Of20 !t18 |
-      Choice19Of20 !t19 |
-      Choice20Of20 !t20
+
+data OneOf20 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17 t18 t19 t20
+    = OneOf20      !t1
+    | TwoOf20      !t2
+    | ThreeOf20    !t3
+    | FourOf20     !t4
+    | FiveOf20     !t5
+    | SixOf20      !t6
+    | SevenOf20    !t7
+    | EightOf20    !t8
+    | NineOf20     !t9
+    | Choice10Of20 !t10
+    | Choice11Of20 !t11
+    | Choice12Of20 !t12
+    | Choice13Of20 !t13
+    | Choice14Of20 !t14
+    | Choice15Of20 !t15
+    | Choice16Of20 !t16
+    | Choice17Of20 !t17
+    | Choice18Of20 !t18
+    | Choice19Of20 !t19
+    | Choice20Of20 !t20
     deriving (Eq, Ord, Read, Show)
-oneOf20
-  f1
-  f2
-  f3
-  f4
-  f5
-  f6
-  f7
-  f8
-  f9
-  f10
-  f11
-  f12
-  f13
-  f14
-  f15
-  f16
-  f17
-  f18
-  f19
-  f20
-  it
+
+oneOf20 f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 f13 f14 f15 f16 f17 f18 f19 f20 it
   = case it of
-      OneOf20 x -> f1 x
-      TwoOf20 x -> f2 x
-      ThreeOf20 x -> f3 x
-      FourOf20 x -> f4 x
-      FiveOf20 x -> f5 x
-      SixOf20 x -> f6 x
-      SevenOf20 x -> f7 x
-      EightOf20 x -> f8 x
-      NineOf20 x -> f9 x
+      OneOf20      x -> f1 x
+      TwoOf20      x -> f2 x
+      ThreeOf20    x -> f3 x
+      FourOf20     x -> f4 x
+      FiveOf20     x -> f5 x
+      SixOf20      x -> f6 x
+      SevenOf20    x -> f7 x
+      EightOf20    x -> f8 x
+      NineOf20     x -> f9 x
       Choice10Of20 x -> f10 x
       Choice11Of20 x -> f11 x
       Choice12Of20 x -> f12 x
