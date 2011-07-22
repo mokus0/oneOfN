@@ -34,13 +34,16 @@ $( do
             
             -- a "folding" function, like 'Prelude.either'
             let f n = mkName ("f" ++ show n)
+                it  = mkName "it"
                 x   = mkName "x"
             fun <- funD (mkName (lc (nOfM 1 m)))
-                [ clause 
-                    ( map (varP . f) [1..m]
-                        ++ [conP (mkName (nOfM n m)) [varP x]])
-                    (normalB (appE (varE (f n)) (varE x))) []
-                | n <- [1..m]
+                [ clause
+                    (map (varP . f) [1..m] ++ [varP it])
+                    (normalB (caseE (varE it)
+                        [ match (conP (mkName (nOfM n m)) [varP x])
+                            (normalB (appE (varE (f n)) (varE x))) []
+                        | n <- [1..m]
+                        ])) []
                 ]
             
             return [ty, fun]
