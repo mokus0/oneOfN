@@ -1,4 +1,8 @@
 {-# LANGUAGE TemplateHaskell, DeriveDataTypeable #-}
+{-# LANGUAGE CPP #-}
+#if defined(__GLASGOW_HASKELL__) && __GLASGOW_HASKELL__ >= 702
+{-# LANGUAGE Safe #-}
+#endif
 module Data.OneOfN where
 
 import Data.Char (toLower)
